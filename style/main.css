@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f7f8fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 280px 1fr 300px;
+    min-height: 100vh;
+}
+
+aside {
+    padding: 0px !important;
+}
+
+.sidebar {
+    background: #ffffff;
+    padding: 32px 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.sidebar__logo {
+    width: 178px;
+    height: 48px;
+    margin: 35px 66px 33px 36px;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sidebar__nav ul,
+.sidebar__bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.sidebar__nav li,
+.sidebar__bottom li {
+    width: 258px;
+    height: 64px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.48px;
+    color: #1E293B;
+    padding: 12px 24px 12px 40px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    opacity: 70%;
+}
+
+
+.sidebar__nav li:hover,
+.sidebar__nav li.active,
+.sidebar__bottom li:hover {
+    font-weight: 600;
+    opacity: 100%;
+}
+
+
+.sidebar__nav li.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #5e5ce6;
+    border-radius: 0 4px 4px 0;
+}
+
+.sidebar-divider {
+    list-style: none;
+    justify-content: flex-start;
+}
+
+.divider-line {
+    height: 1px;
+    background: #e0e0e0;
+    width: 219px;
+}
+
+.main {
+    padding: 37px 52px;
+}
+
+
+.search-wrapper {
+    position: relative;
+    width: 250px;
+
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    color: #667085
+}
+
+.search-bar {
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    padding: 10px 16px 10px 40px;
+    border-radius: 100px;
+    font-size: 14px;
+    width: 722px;
+    height: 64px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+
+.search-bar:focus {
+    border-color: #5e5ce6;
+    box-shadow: 0 0 0 2px rgba(94, 92, 230, 0.2);
+}
