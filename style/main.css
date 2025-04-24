@@ -99,6 +99,7 @@ aside {
     width: 219px;
 }
 
+
 .top-bar {
     display: flex;
     align-items: start;
@@ -267,4 +268,268 @@ li {
 
 .profile.active .menu {
     display: block;
+}
+
+/* Main Content Layout */
+.main-content {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Overview Section */
+.overview-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    width: 722px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.card {
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    background: white;
+    border: 1px solid #f0f0f0;
+    width: 333.5px;
+    height: 165.5px;
+}
+
+.card-purple {
+    background: #4745A4;
+    color: white;
+    border: none;
+
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.Card-divider {
+    height: 1px;
+    background: #e0e0e0;
+    width: 293.5px;
+}
+
+
+.card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-subtitle {
+    font-size: 12px;
+    color: #0D163A;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    opacity: 60%;
+    gap: 4px;
+}
+
+.card-purple .card-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+.card-purple .percentage-up {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-amount {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.card-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-purple .card-arrow {
+
+    color: white;
+}
+
+/* Saving Plan Section */
+.saving-plan-section {
+    background: white;
+    padding: 24px;
+    width: 350px;
+
+}
+
+
+.see-all {
+    color: #5b5fc7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.saving-plan-item {
+    margin: 24px 0;
+}
+
+.saving-plan-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.saving-plan-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.saving-plan-target {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.saving-plan-amounts {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.saving-plan-left {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.saving-plan-current {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.saving-plan-total {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.saving-plan-percentage {
+    font-size: 16px;
+    font-weight: 600;
+    color: #5b5fc7;
+}
+
+.percentage-48 {
+    color: #5b5fc7;
+}
+
+.percentage-79 {
+    color: #f59e0b;
+}
+
+.percentage-32 {
+    color: #22c55e;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill-purple {
+    height: 100%;
+    width: 48%;
+    background: #5b5fc7;
+    border-radius: 4px;
+}
+
+.progress-fill-yellow {
+    height: 100%;
+    width: 79%;
+    background: #f59e0b;
+    border-radius: 4px;
+}
+
+.progress-fill-green {
+    height: 100%;
+    width: 32%;
+    background: #22c55e;
+    border-radius: 4px;
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .overview-section,
+    .saving-plan-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .top-bar {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
 }

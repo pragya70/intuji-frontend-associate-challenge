@@ -14,6 +14,7 @@
 
 <body>
     <div class="dashboard">
+
         <aside class="sidebar">
             <div class="sidebar__top">
                 <div class="sidebar__logo">
@@ -66,37 +67,204 @@
 
             </div>
         </aside>
-
-        <main class="top-bar">
-            <div class="search-container">
-                <img src="assets/icons/searchIcon.svg" alt="Search" class="search-icon" />
-                <input type="text" class="search-input" placeholder="Search here..." />
-            </div>
-            <div class="right-section">
-                <button class="buttonIcon">
-                    <img src="assets/icons/notificationIcon.svg" alt="Notification" />
-                </button>
-                <button class="buttonIcon">
-                    <img src="assets/icons/messageNotifyIcon.svg" alt="Message" />
-                </button>
-                <ul class="profile-wrapper">
-                    <li>
-                        <div class="profile" onclick="toggleMenu(event)">
-                            <div class="imageProfile">
-                                <img src="assets/icons/imageIcons.svg" alt="Profile Icon" />
+        <div>
+            <main class="top-bar">
+                <div class="search-container">
+                    <img src="assets/icons/searchIcon.svg" alt="Search" class="search-icon" />
+                    <input type="text" class="search-input" placeholder="Search here..." />
+                </div>
+                <div class="right-section">
+                    <button class="buttonIcon">
+                        <img src="assets/icons/notificationIcon.svg" alt="Notification" />
+                    </button>
+                    <button class="buttonIcon">
+                        <img src="assets/icons/messageNotifyIcon.svg" alt="Message" />
+                    </button>
+                    <ul class="profile-wrapper">
+                        <li>
+                            <div class="profile" onclick="toggleMenu(event)">
+                                <div class="imageProfile">
+                                    <img src="assets/icons/imageIcons.svg" alt="Profile Icon" />
+                                </div>
+                                <a class="name">Mirie Kiritani</a>
+                                <img src="assets/icons/arrow-down.svg" />
+                                <ul class="menu">
+                                    <li><a href="#">Edit</a></li>
+                                    <li><a href="#">Change Password</a></li>
+                                    <li><a href="#">Log out</a></li>
+                                </ul>
                             </div>
-                            <a class="name">Mirie Kiritani</a>
-                            <img src="assets/icons/arrow-down.svg" />
-                            <ul class="menu">
-                                <li><a href="#">Edit</a></li>
-                                <li><a href="#">Change Password</a></li>
-                                <li><a href="#">Log out</a></li>
-                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+
+            <main class="main-content">
+
+                <div class="overview-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Overview</h2>
+                    </div>
+                    <div class="cards-grid">
+                        <div class="card card-purple">
+                            <div class="card-top">
+                                <div class="card-icon icon-purple">
+                                    <img src="assets/cardIcons/walletIcon.svg" alt="wallet-icon" />
+                                </div>
+                                <div class="card-text">
+                                    <div class="card-title">Your Balance</div>
+                                    <div class="card-subtitle">
+                                        <img src="assets/cardIcons/smallIcons/walletsmallIcon.svg" alt="walletSmallIcon"
+                                            class="smallIcon" />
+                                        <span class="percentage-up">15%</span> compared with last month
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footercard">
+                                <div class="Card-divider"></div>
+                                <div class="card-amount">$28,891.138</div>
+                                <div class="card-arrow">
+                                    <img src="assets/cardIcons/Arrow/arrow-white.svg" alt="arrow right" />
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </main>
+
+
+                        <div class="card">
+                            <div class="card-top">
+                                <div class="card-icon icon-green">
+                                    <img src="assets/cardIcons/savingIcon.svg" alt="saving-icon" />
+                                </div>
+                                <div class="card-text">
+                                    <div class="card-title">Saving</div>
+                                    <div class="card-subtitle">
+                                        <img src="assets/cardIcons/smallIcons/savingsmallIcon.svg" alt="savingSmallIcon"
+                                            class="smallIcon" />
+                                        <span class="percentage-up">10%</span> compared with last month
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footercard">
+                                <div class="Card-divider"></div>
+                                <div class="card-amount">$1,050.44</div>
+                                <div class="card-arrow">
+                                    <img src="assets/cardIcons/Arrow/arrow.svg" alt="arrow right" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-top">
+                                <div class="card-icon icon-yellow">
+                                    <img src="assets/cardIcons/expenseIcon.svg" alt="expenses-icon" />
+                                </div>
+                                <div class="card-text">
+                                    <div class="card-title">Expenses</div>
+                                    <div class="card-subtitle">
+                                        <img src="assets/cardIcons/smallIcons/expensesmallIcon.svg"
+                                            alt="expenseSmallIcon" class="smallIcon" />
+                                        <span class="percentage-up">2%</span> compared with last month
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footercard">
+                                <div class="Card-divider"></div>
+                                <div class="card-amount">$200.31</div>
+                                <div class="card-arrow">
+                                    <img src="assets/cardIcons/Arrow/arrow.svg" alt="arrow right" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-top">
+                                <div class="card-icon icon-blue">
+                                    <img src="assets/cardIcons/incomeIcon.svg" alt="income-icon" />
+                                </div>
+                                <div class="card-text">
+                                    <div class="card-title">Incomes</div>
+                                    <div class="card-subtitle">
+                                        <img src="assets/cardIcons/smallIcons/incomesamllIcon.svg" alt="incomeSmallIcon"
+                                            class="smallIcon" />
+                                        <span class="percentage-up">8%</span> compared with last month
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footercard">
+                                <div class="Card-divider"></div>
+                                <div class="card-amount">$21,121.0</div>
+                                <div class="card-arrow">
+                                    <img src="assets/cardIcons/Arrow/arrow.svg" alt="arrow right" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="saving-plan-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Saving Plan</h2>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="Card-divider"></div>
+                    <div class="saving-plan-item">
+                        <div class="saving-plan-header">
+                            <div class="saving-plan-title">Bali Vacation</div>
+                            <div class="saving-plan-target">Target: August 25, 2022</div>
+                        </div>
+                        <div class="saving-plan-amounts">
+                            <div class="saving-plan-left">
+                                <span class="saving-plan-current">$1950.21</span>
+                                <span class="saving-plan-total">/$4000</span>
+                            </div>
+                            <div class="saving-plan-percentage percentage-48">48%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill-purple"></div>
+                        </div>
+                    </div>
+
+                    <div class="saving-plan-item">
+                        <div class="saving-plan-header">
+                            <div class="saving-plan-title">New Gadget</div>
+                            <div class="saving-plan-target">Target: August 25, 2022</div>
+                        </div>
+                        <div class="saving-plan-amounts">
+                            <div class="saving-plan-left">
+                                <span class="saving-plan-current">$790.21</span>
+                                <span class="saving-plan-total">/$1000</span>
+                            </div>
+                            <div class="saving-plan-percentage percentage-79">79%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill-yellow"></div>
+                        </div>
+                    </div>
+
+                    <div class="saving-plan-item">
+                        <div class="saving-plan-header">
+                            <div class="saving-plan-title">Charity</div>
+                            <div class="saving-plan-target">Target: August 25, 2022</div>
+                        </div>
+                        <div class="saving-plan-amounts">
+                            <div class="saving-plan-left">
+                                <span class="saving-plan-current">$32.11</span>
+                                <span class="saving-plan-total">/$100</span>
+                            </div>
+                            <div class="saving-plan-percentage percentage-32">32%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill-green"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>
+
+
+
+        </div>
 
 </body>
 

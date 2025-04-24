@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar__top">
+                <div class="sidebar__logo">
+                    <img src="assets/icons/imageIcons.svg" alt="Dashboard Icon" class="icon" />
+                </div>
+                <nav class="sidebar__nav">
+                    <ul>
+                        <li class="active">
+                            <img src="assets/icons/dashboardIcon.svg" alt="Dashboard Icon" class="nav-icon" />
+                            Dashboard
+                        </li>
+
+                        <li>
+                            <img src="assets/icons/calenderIcon.svg" alt="Dashboard Icon" class="nav-icon" />
+                            Schedule
+                        </li>
+                        <li>
+                            <img src="assets/icons/messageIcon.svg" alt="Dashboard Icon" class="nav-icon" />
+                            Message
+                        </li>
+                        <li>
+                            <img src="assets/icons/analyticsIcon.svg" alt="Dashboard Icon" class="nav-icon" />Analytics
+                        </li>
+                        <li>
+                            <img src="assets/icons/teamIcon.svg" alt="Dashboard Icon" class="nav-icon" />Team
+                        </li>
+
+                        <li class="sidebar-divider">
+                            <div class="divider-line"></div>
+                        </li>
+                        <li>
+                            <img src="assets/icons/profileIcon.svg" alt="Dashboard Icon" class="nav-icon" />Profile
+                        </li>
+                        <li>
+                            <img src="assets/icons/settingIcon.svg" alt="Dashboard Icon" class="nav-icon" />Settings
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar__bottom">
+
+                <ul>
+                    <li>
+                        <img src="assets/icons/helpIcon.svg" alt="Dashboard Icon" class="bottom-nav-icon" />Help
+                    </li>
+                    <li>
+                        <img src="assets/icons/logoutIcon.svg" alt="Dashboard Icon" class="bottom-nav-icon" />Logout
+                    </li>
+                </ul>
+
+            </div>
+        </aside>
+
+        <main class="top-bar">
+            <div class="search-container">
+                <img src="assets/icons/searchIcon.svg" alt="Search" class="search-icon" />
+                <input type="text" class="search-input" placeholder="Search here..." />
+            </div>
+            <div class="right-section">
+                <button class="buttonIcon">
+                    <img src="assets/icons/notificationIcon.svg" alt="Notification" />
+                </button>
+                <button class="buttonIcon">
+                    <img src="assets/icons/messageNotifyIcon.svg" alt="Message" />
+                </button>
+                <ul class="profile-wrapper">
+                    <li>
+                        <div class="profile" onclick="toggleMenu(event)">
+                            <div class="imageProfile">
+                                <img src="assets/icons/imageIcons.svg" alt="Profile Icon" />
+                            </div>
+                            <a class="name">Mirie Kiritani</a>
+                            <img src="assets/icons/arrow-down.svg" />
+                            <ul class="menu">
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Change Password</a></li>
+                                <li><a href="#">Log out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <main class="main-content">
+            <div class="overview-and-saving">
+                <div>
+                    <div class="overview-card card">
+                        <h2 class="overview-title">Overview</h2>
+                        <div class="overview-content">
+                            <div class="overview-box balance-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Your Balance</h3>
+                                    <p class="box-subtitle"><span>&#8599;</span> 15% compared with last month</p>
+                                </div>
+                                <p class="box-value">$28,891.138</p>
+                            </div>
+                            <div class="overview-box saving-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Saving</h3>
+                                    <p class="box-subtitle"><span>&#8599;</span> 10% compared with last month</p>
+                                </div>
+                                <p class="box-value">$1,050.44</p>
+                            </div>
+                            <div class="overview-box expenses-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Expenses</h3>
+                                    <p class="box-subtitle"><span>&#8594;</span> 2% compared with last month</p>
+                                </div>
+                                <p class="box-value">$200.31</p>
+                            </div>
+                            <div class="overview-box income-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Incomes</h3>
+                                    <p class="box-subtitle"><span>&#8599;</span> 8% compared with last month</p>
+                                </div>
+                                <p class="box-value">$21,121.0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="saving-plan-card card">
+                        <div class="saving-plan-header">
+                            <h2 class="saving-plan-title">Saving Plan</h2>
+                            <a href="#" class="see-all-link">See All</a>
+                        </div>
+                        <div class="saving-plan-content">
+                            <div class="saving-item">
+                                <div class="saving-item-header">
+                                    <h3 class="saving-item-title">Bali Vacation</h3>
+                                    <p class="saving-item-target">Target : August 25 2022</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill" style="width: 48%"></div>
+                                </div>
+                                <p class="saving-item-progress">$1950,21 / $4000 48%</p>
+                            </div>
+                            <div class="saving-item">
+                                <div class="saving-item-header">
+                                    <h3 class="saving-item-title">New Gadget</h3>
+                                    <p class="saving-item-target">Target : August 25 2022</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill" style="width: 79%"></div>
+                                </div>
+                                <p class="saving-item-progress">$790,21 / $1000 79%</p>
+                            </div>
+                            <div class="saving-item">
+                                <div class="saving-item-header">
+                                    <h3 class="saving-item-title">Charity</h3>
+                                    <p class="saving-item-target">Target : August 25 2022</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill" style="width: 32%"></div>
+                                </div>
+                                <p class="saving-item-progress">$32,111 / $100 32%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+</body>
+
+</html>
+
+
+
+<script>
+    function toggleMenu(event) {
+        event.stopPropagation(); // Prevent bubbling to the document
+        const profile = event.currentTarget;
+        profile.classList.toggle("active");
+    }
+
+    // Hide menu only when clicking completely outside the profile
+    document.addEventListener("click", function (e) {
+        document.querySelectorAll(".profile.active").forEach((profile) => {
+            if (!profile.contains(e.target)) {
+                profile.classList.remove("active");
+            }
+        });
+    });
+</script>
