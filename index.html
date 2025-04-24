@@ -67,16 +67,56 @@
             </div>
         </aside>
 
-        <main class="main">
-            <div class="search-wrapper">
-                <img src="assets/icons/searchIcon.svg" alt="Search Icon" class="search-icon" />
-                <input type="text" class="search-bar" placeholder="Search here..." />
+        <main class="top-bar">
+            <div class="search-container">
+                <img src="assets/icons/searchIcon.svg" alt="Search" class="search-icon" />
+                <input type="text" class="search-input" placeholder="Search here..." />
             </div>
-
-
+            <div class="right-section">
+                <button class="buttonIcon">
+                    <img src="assets/icons/notificationIcon.svg" alt="Notification" />
+                </button>
+                <button class="buttonIcon">
+                    <img src="assets/icons/messageNotifyIcon.svg" alt="Message" />
+                </button>
+                <ul class="profile-wrapper">
+                    <li>
+                        <div class="profile" onclick="toggleMenu(event)">
+                            <div class="imageProfile">
+                                <img src="assets/icons/imageIcons.svg" alt="Profile Icon" />
+                            </div>
+                            <a class="name">Mirie Kiritani</a>
+                            <img src="assets/icons/arrow-down.svg" />
+                            <ul class="menu">
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Change Password</a></li>
+                                <li><a href="#">Log out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </main>
-    </div>
 
 </body>
 
 </html>
+
+
+
+<script>
+    function toggleMenu(event) {
+        event.stopPropagation(); // Prevent bubbling to the document
+        const profile = event.currentTarget;
+        profile.classList.toggle("active");
+    }
+
+    // Hide menu only when clicking completely outside the profile
+    document.addEventListener("click", function (e) {
+        document.querySelectorAll(".profile.active").forEach((profile) => {
+            if (!profile.contains(e.target)) {
+                profile.classList.remove("active");
+            }
+        });
+    });
+</script>

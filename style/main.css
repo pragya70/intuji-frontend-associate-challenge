@@ -99,42 +99,172 @@ aside {
     width: 219px;
 }
 
-.main {
-    padding: 37px 52px;
+.top-bar {
+    display: flex;
+    align-items: start;
+    padding: 20px;
+    gap: 24px
 }
 
-
-.search-wrapper {
-    position: relative;
-    width: 250px;
-
+.search-container {
+    display: flex;
+    height: 64px;
+    width: 722px;
+    background: #FFFFFF;
+    border-radius: 100px;
+    padding: 8px 12px;
 }
 
 .search-icon {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    pointer-events: none;
-    color: #667085
+    width: 16px;
+    margin-right: 10px;
 }
 
-.search-bar {
-    padding: 10px 16px;
-    border: 1px solid #ccc;
-    padding: 10px 16px 10px 40px;
-    border-radius: 100px;
-    font-size: 14px;
-    width: 722px;
-    height: 64px;
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
     outline: none;
-    transition: border 0.2s ease;
+    font-size: 16px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 356px;
+    height: 64px;
+    background: #FFFFFF;
+    border-radius: 100px
+}
+
+.buttonIcon {
+    height: 48px;
+    width: 66px;
+    border-radius: 100px;
+    border: 1px solid #DEDEDE;
+    background: #FFFFFF;
+
+
+}
+
+.buttonIcon img,
+.message-icon img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 
-.search-bar:focus {
-    border-color: #5e5ce6;
-    box-shadow: 0 0 0 2px rgba(94, 92, 230, 0.2);
+
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.profile-wrapper {
+    width: 200px;
+    position: relative;
+    margin: 50px auto;
+}
+
+
+
+.profile-wrapper:hover::after {
+    border-color: #666 transparent transparent;
+}
+
+.profile {
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.profile:hover {
+    cursor: pointer;
+    background: #f8f8f8;
+}
+
+.profile .name {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111;
+    line-height: 24px;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.profile .name:hover {
+    color: #0088cc;
+}
+
+.imageProfile {
+    width: 38px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.profile img {
+    width: 24px;
+    border-radius: 0;
+    object-fit: contain;
+    object-position: center;
+}
+
+.menu {
+    display: none;
+    clear: both;
+    margin: 20px 0 0 0;
+    list-style-type: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+}
+
+.menu li {
+    font-size: 12px;
+    margin: 0;
+    padding: 10px 16px;
+    background: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu li a {
+    color: #555;
+}
+
+.menu li:hover>a {
+    color: #111;
+}
+
+.menu li:hover {
+    background-color: #f0f0f0;
+
+}
+
+
+.profile .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    min-width: 180px;
+}
+
+.profile.active .menu {
+    display: block;
 }
