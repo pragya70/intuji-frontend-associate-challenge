@@ -358,6 +358,8 @@ li {
     margin-bottom: 16px;
     opacity: 60%;
     gap: 4px;
+    width: fit-content;
+
 }
 
 .card-purple .card-subtitle {
@@ -645,7 +647,7 @@ li {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive styles */
+
 @media (max-width: 1400px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -804,7 +806,6 @@ li {
     }
 }
 
-/* Overlay for mobile sidebar */
 .sidebar-overlay {
     display: none;
     position: fixed;

@@ -119,7 +119,7 @@
                                     <div class="card-subtitle">
                                         <img src="assets/cardIcons/smallIcons/walletsmallIcon.svg" alt="walletSmallIcon"
                                             class="smallIcon" />
-                                        <span class="percentage-up">15%</span> compared with last month
+                                        15% compared with last month
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                     <div class="card-subtitle">
                                         <img src="assets/cardIcons/smallIcons/savingsmallIcon.svg" alt="savingSmallIcon"
                                             class="smallIcon" />
-                                        <span class="percentage-up">10%</span> compared with last month
+                                        10% compared with last month
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                     <div class="card-subtitle">
                                         <img src="assets/cardIcons/smallIcons/expensesmallIcon.svg"
                                             alt="expenseSmallIcon" class="smallIcon" />
-                                        <span class="percentage-up">2%</span> compared with last month
+                                        2% compared with last month
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                                     <div class="card-subtitle">
                                         <img src="assets/cardIcons/smallIcons/incomesamllIcon.svg" alt="incomeSmallIcon"
                                             class="smallIcon" />
-                                        <span class="percentage-up">8%</span> compared with last month
+                                        8% compared with last month
                                     </div>
                                 </div>
                             </div>
@@ -362,12 +362,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         function toggleMenu(event) {
-            event.stopPropagation(); // Prevent bubbling to the document
+            event.stopPropagation();
             const profile = event.currentTarget;
             profile.classList.toggle("active");
         }
 
-        // Hide menu only when clicking completely outside the profile
         document.addEventListener("click", function (e) {
             document.querySelectorAll(".profile.active").forEach((profile) => {
                 if (!profile.contains(e.target)) {
@@ -376,7 +375,6 @@
             });
         });
 
-        // Mobile sidebar toggle
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const sidebar = document.getElementById('sidebar');
@@ -405,13 +403,11 @@
                 });
             }
 
-            // Chart data
             const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-            // Data for the purple line (Label1) - matching the image pattern
+
             const purpleData = [14000, 11000, 14000, 7000, 13000, 20000, 17000];
 
-            // Data for the yellow line (Label1) - matching the image pattern
             const yellowData = [5000, 6000, 9000, 10000, 5000, 6000, 9000];
 
             // Get the chart canvas
