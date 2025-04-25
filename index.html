@@ -14,8 +14,13 @@
 
 <body>
     <div class="dashboard">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            Menu
+        </button>
 
-        <aside class="sidebar">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar__top">
                 <div class="sidebar__logo">
                     <img src="assets/icons/imageIcons.svg" alt="Dashboard Icon" class="icon" />
@@ -55,7 +60,6 @@
                 </nav>
             </div>
             <div class="sidebar__bottom">
-
                 <ul>
                     <li>
                         <img src="assets/icons/helpIcon.svg" alt="Dashboard Icon" class="bottom-nav-icon" />Help
@@ -64,10 +68,10 @@
                         <img src="assets/icons/logoutIcon.svg" alt="Dashboard Icon" class="bottom-nav-icon" />Logout
                     </li>
                 </ul>
-
             </div>
         </aside>
-        <div>
+
+        <div class="main-wrapper">
             <main class="top-bar">
                 <div class="search-container">
                     <img src="assets/icons/searchIcon.svg" alt="Search" class="search-icon" />
@@ -83,7 +87,7 @@
                     <ul class="profile-wrapper">
                         <li>
                             <div class="profile" onclick="toggleMenu(event)">
-                                <div class="imageProfile">
+                                <div class="imageContain">
                                     <img src="assets/icons/imageIcons.svg" alt="Profile Icon" />
                                 </div>
                                 <a class="name">Mirie Kiritani</a>
@@ -100,7 +104,6 @@
             </main>
 
             <main class="main-content">
-
                 <div class="overview-section">
                     <div class="section-header">
                         <h2 class="section-title">Overview</h2>
@@ -128,7 +131,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="card">
                             <div class="card-top">
@@ -258,33 +260,290 @@
                         </div>
                     </div>
                 </div>
-
-
             </main>
 
+            <main class="second-main">
+                <div class="analytics-card">
+                    <div class="analytics-header">
+                        <h2 class="section-title">Analytics</h2>
+                        <div class="legend-container">
+                            <div class="legend-item">
+                                <span class="legend-dot purple"></span>
+                                <span>Label1</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot yellow"></span>
+                                <span>Label1</span>
+                            </div>
+                            <div class="dropdown">
+                                <button class="dropdown-btn">Weekly <img
+                                        src="assets/cardIcons/analyticIcon/dropdown.svg" /></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="analyticsChart"></canvas>
+                    </div>
+                </div>
 
-
+                <div class="transactions-card">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent Transaction</h2>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="Card-divider"></div>
+                    <div class="transactions-list">
+                        <div class="transaction-item">
+                            <div class="transaction-left">
+                                <div class="imageContain">
+                                    <img src="assets/icons/imageIcons.svg" alt="Figma">
+                                </div>
+                                <div class="transaction-details">
+                                    <h3>Figma</h3>
+                                    <p>August 20, 2022</p>
+                                </div>
+                            </div>
+                            <div class="transaction-right">
+                                <h3>$100</h3>
+                                <p class="completed">Completed</p>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-left">
+                                <div class="imageContain">
+                                    <img src="assets/icons/imageIcons.svg" alt="Youtube">
+                                </div>
+                                <div class="transaction-details">
+                                    <h3>Youtube</h3>
+                                    <p>August 20, 2022</p>
+                                </div>
+                            </div>
+                            <div class="transaction-right">
+                                <h3>$120</h3>
+                                <p class="completed">Completed</p>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-left">
+                                <div class="imageContain">
+                                    <img src="assets/icons/imageIcons.svg" alt="Spotify">
+                                </div>
+                                <div class="transaction-details">
+                                    <h3>Spotify</h3>
+                                    <p>August 20, 2022</p>
+                                </div>
+                            </div>
+                            <div class="transaction-right">
+                                <h3>$15</h3>
+                                <p class="completed">Completed</p>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-left">
+                                <div class="imageContain">
+                                    <img src="assets/icons/imageIcons.svg" alt="Freepik">
+                                </div>
+                                <div class="transaction-details">
+                                    <h3>Freepik</h3>
+                                    <p>August 20, 2022</p>
+                                </div>
+                            </div>
+                            <div class="transaction-right">
+                                <h3>$300</h3>
+                                <p class="completed">Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation(); // Prevent bubbling to the document
+            const profile = event.currentTarget;
+            profile.classList.toggle("active");
+        }
+
+        // Hide menu only when clicking completely outside the profile
+        document.addEventListener("click", function (e) {
+            document.querySelectorAll(".profile.active").forEach((profile) => {
+                if (!profile.contains(e.target)) {
+                    profile.classList.remove("active");
+                }
+            });
+        });
+
+        // Mobile sidebar toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            if (mobileMenuToggle && sidebar && sidebarOverlay) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    sidebar.classList.toggle('active');
+                    sidebarOverlay.classList.toggle('active');
+                    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+                });
+
+                sidebarOverlay.addEventListener('click', function () {
+                    sidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+
+                // Close sidebar when window is resized to desktop size
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 1200 && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                        sidebarOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Chart data
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+            // Data for the purple line (Label1) - matching the image pattern
+            const purpleData = [14000, 11000, 14000, 7000, 13000, 20000, 17000];
+
+            // Data for the yellow line (Label1) - matching the image pattern
+            const yellowData = [5000, 6000, 9000, 10000, 5000, 6000, 9000];
+
+            // Get the chart canvas
+            const ctx = document.getElementById('analyticsChart').getContext('2d');
+
+            // Create gradient for the purple area
+            const purpleGradient = ctx.createLinearGradient(0, 0, 0, 300);
+            purpleGradient.addColorStop(0, 'rgba(138, 112, 255, 0.3)');
+            purpleGradient.addColorStop(1, 'rgba(138, 112, 255, 0.05)');
+
+            // Create gradient for the yellow area
+            const yellowGradient = ctx.createLinearGradient(0, 0, 0, 300);
+            yellowGradient.addColorStop(0, 'rgba(255, 167, 38, 0.3)');
+            yellowGradient.addColorStop(1, 'rgba(255, 167, 38, 0.05)');
+
+            // Create the chart
+            const analyticsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: days,
+                    datasets: [
+                        {
+                            label: 'Label1',
+                            data: purpleData,
+                            borderColor: '#8a70ff',
+                            backgroundColor: purpleGradient,
+                            tension: 0.4,
+                            fill: true,
+                            pointBackgroundColor: '#8a70ff',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 0,
+                            pointRadius: 0, // Hide points
+                            pointHoverRadius: 0, // Hide hover points
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Label1',
+                            data: yellowData,
+                            borderColor: '#ffa726',
+                            backgroundColor: yellowGradient,
+                            tension: 0.4,
+                            fill: true,
+                            pointBackgroundColor: '#ffa726',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 0,
+                            pointRadius: 0, // Hide points
+                            pointHoverRadius: 0, // Hide hover points
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false // Disable tooltips
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#9ca3af',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            border: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: '#9ca3af',
+                                callback: function (value) {
+                                    if (value === 0) return '0k';
+                                    if (value === 1000) return '1k';
+                                    return value / 1000 + 'k';
+                                },
+                                stepSize: 5000,
+                                padding: 10,
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            border: {
+                                display: false
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    elements: {
+                        line: {
+                            tension: 0.4,
+                            borderWidth: 2
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            top: 10,
+                            right: 10,
+                            bottom: 10,
+                            left: 10
+                        }
+                    }
+                }
+            });
+
+            // Make chart responsive
+            function resizeChart() {
+                if (analyticsChart) {
+                    analyticsChart.resize();
+                }
+            }
+
+            window.addEventListener('resize', resizeChart);
+        });
+    </script>
 </body>
 
 </html>
-
-
-
-<script>
-    function toggleMenu(event) {
-        event.stopPropagation(); // Prevent bubbling to the document
-        const profile = event.currentTarget;
-        profile.classList.toggle("active");
-    }
-
-    // Hide menu only when clicking completely outside the profile
-    document.addEventListener("click", function (e) {
-        document.querySelectorAll(".profile.active").forEach((profile) => {
-            if (!profile.contains(e.target)) {
-                profile.classList.remove("active");
-            }
-        });
-    });
-</script>
