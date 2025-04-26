@@ -386,14 +386,11 @@
                     sidebarOverlay.classList.toggle('active');
                     document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
                 });
-
                 sidebarOverlay.addEventListener('click', function () {
                     sidebar.classList.remove('active');
                     sidebarOverlay.classList.remove('active');
                     document.body.style.overflow = '';
                 });
-
-                // Close sidebar when window is resized to desktop size
                 window.addEventListener('resize', function () {
                     if (window.innerWidth > 1200 && sidebar.classList.contains('active')) {
                         sidebar.classList.remove('active');
@@ -404,26 +401,15 @@
             }
 
             const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-
             const purpleData = [14000, 11000, 14000, 7000, 13000, 20000, 17000];
-
             const yellowData = [5000, 6000, 9000, 10000, 5000, 6000, 9000];
-
-            // Get the chart canvas
             const ctx = document.getElementById('analyticsChart').getContext('2d');
-
-            // Create gradient for the purple area
             const purpleGradient = ctx.createLinearGradient(0, 0, 0, 300);
             purpleGradient.addColorStop(0, 'rgba(138, 112, 255, 0.3)');
             purpleGradient.addColorStop(1, 'rgba(138, 112, 255, 0.05)');
-
-            // Create gradient for the yellow area
             const yellowGradient = ctx.createLinearGradient(0, 0, 0, 300);
             yellowGradient.addColorStop(0, 'rgba(255, 167, 38, 0.3)');
             yellowGradient.addColorStop(1, 'rgba(255, 167, 38, 0.05)');
-
-            // Create the chart
             const analyticsChart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -439,8 +425,8 @@
                             pointBackgroundColor: '#8a70ff',
                             pointBorderColor: '#fff',
                             pointBorderWidth: 0,
-                            pointRadius: 0, // Hide points
-                            pointHoverRadius: 0, // Hide hover points
+                            pointRadius: 0,
+                            pointHoverRadius: 0,
                             borderWidth: 2
                         },
                         {
@@ -453,8 +439,8 @@
                             pointBackgroundColor: '#ffa726',
                             pointBorderColor: '#fff',
                             pointBorderWidth: 0,
-                            pointRadius: 0, // Hide points
-                            pointHoverRadius: 0, // Hide hover points
+                            pointRadius: 0,
+                            pointHoverRadius: 0,
                             borderWidth: 2
                         }
                     ]
@@ -467,7 +453,7 @@
                             display: false
                         },
                         tooltip: {
-                            enabled: false // Disable tooltips
+                            enabled: false
                         }
                     },
                     scales: {
@@ -530,7 +516,6 @@
                 }
             });
 
-            // Make chart responsive
             function resizeChart() {
                 if (analyticsChart) {
                     analyticsChart.resize();

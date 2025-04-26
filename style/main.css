@@ -366,7 +366,7 @@ li {
     color: rgba(255, 255, 255, 0.8);
 }
 
-.card-purple .percentage-up {
+.card-purple {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -819,4 +819,20 @@ li {
 
 .sidebar-overlay.active {
     display: block;
+}
+
+
+
+@media (min-width: 1786px) and (max-width: 1942px) {
+
+    .card-subtitle .smallIcon {
+        display: inline-flex;
+        vertical-align: middle;
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+        margin-bottom: 18px;
+    }
+
+
 }
